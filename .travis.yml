@@ -15,7 +15,7 @@ after_success:
   - docker build -t alexdaciuk/multi-nginx ./nginx
   - docker build -t alexdaciuk/multi-server ./server
   - docker build -t alexdaciuk/multi-worker ./worker
-  - echo "$dockerPassword" | docker login --username "$dockerUser" --password-stdin
+  - echo "$dockerPassword" | docker login -u "$dockerUser" --password-stdin
   - docker push alexdaciuk/multi-client
   - docker push alexdaciuk/multi-nginx
   - docker push alexdaciuk/multi-server
